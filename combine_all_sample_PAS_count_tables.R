@@ -1,6 +1,5 @@
 
-library(tidyverse)
-library(plyr)
+if (!require('tidyverse')) install.packages('tidyverse'); library('tidyverse')
 
 
 args<- commandArgs(TRUE)
