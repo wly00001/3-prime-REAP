@@ -137,7 +137,7 @@ Rscript combine_all_sample_PAS_count_tables.R -csv ./result/csv -out ./result/cl
 
 
 
-### The cluster.all.reads.csv is the PAS count table of all samples, in which rows are PASs and columns are samples.
+- The cluster.all.reads.csv is the PAS count table of all samples, in which rows are PASs and columns are samples.
 
 
 
