@@ -5,7 +5,7 @@
 
 - This pipeline use reverse reads data of any type of 3' RNA-Seq methods as input. 
 
-- By mapping to reference of any polyA site (PAS) data, such as polyA_DB, this pipeline outputs a PAS read count table, which can be used to determine PAS expression/usage changes in different samples/treatmenbts. 
+- By mapping to reference of any polyA site (PAS) data, such as polyA_DB (https://exon.apps.wistar.org/polya_db/v3/), this pipeline outputs a PAS read count table, which can be used to determine PAS expression/usage changes in different samples/treatmenbts. 
 
 - This pipeline also generates UCSC genome browser bigwig files for PAS expression visualization.
 
