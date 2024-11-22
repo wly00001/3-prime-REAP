@@ -3,7 +3,11 @@
 
 #### By Luyang Wang, lwang@wistar.org / wly00001@gmail.com, Bin Tian Lab @ The Wistar Institute
 
-- Use reverse reads data of any type of 3' RNA-Seq methods as input. 
+- This pipeline use reverse reads data of any type of 3' RNA-Seq methods as input. 
+
+- By mapping to reference of any polyA site (PAS) data, such as polyA_DB, this pipeline outputs a PAS read count table, which can be used to determine PAS expression/usage changes in different samples/treatmenbts. 
+
+- This pipeline also generates UCSC genome browser bigwig files for PAS expression visualization.
 
 - Before running the code below, please create a data name list, DataNameList.txt, which contains only one column of each raw sequencing data name. For example, if the raw sequencing data name is 12345-02-01-01_S168_L008_R1_001.fastq, the name should be put into the txt file should be "12345-02-01-01_S168_L008_R1_001".
 
@@ -74,7 +78,8 @@ cd $WORK_DIR
 
 
 
-### Match LAP with PAS, and generate PAS count table, only reads whose LAP is within +/-24nt PAS will be kept.
+### Match LAP with PAS, and generate PAS count table
+- Only reads whose LAP is within +/-24nt PAS will be kept.
 ```
 mkdir result
 mkdir result/csv
@@ -130,7 +135,7 @@ cd $WORK_DIR
 
 
 
-### Combine all PAS count tables into one csv table.
+### Combine all PAS count tables into one csv table
 ```
 Rscript combine_all_sample_PAS_count_tables.R -csv ./result/csv -out ./result/cluster.all.reads.csv
 ```
