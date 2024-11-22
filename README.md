@@ -16,7 +16,7 @@ cd $WORK_DIR
 ```
 
 
-### generate PAS STAR index
+### Generate PAS STAR index
 Convert PAS_table into PAS_table.bed
 PAS_table_full_path is the full path of a tab-separated PAS table, in which rows are PASs and columns must contain "Chromosome","Strand","Position" for each PAS.
 ```
