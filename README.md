@@ -3,7 +3,7 @@
 
 #### By Luyang Wang, lwang@wistar.org / wly00001@gmail.com, Bin Tian Lab @ The Wistar Institute
 
-- using reverse reads data of any type of 3' RNA-Seq methods as input. 
+- Use reverse reads data of any type of 3' RNA-Seq methods as input. 
 
 - Before running the code below, please create a data name list, DataNameList.txt, which contains only one column of each raw sequencing data name. For example, if the raw sequencing data name is 12345-02-01-01_S168_L008_R1_001.fastq, the name should be put into the txt file should be "12345-02-01-01_S168_L008_R1_001".
 
