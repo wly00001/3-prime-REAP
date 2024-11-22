@@ -1,5 +1,5 @@
 
-# 3'REAP (3’ Reads Enrichment using Annotated PolyA sites) pipeline
+## 3'REAP (3’ Reads Enrichment using Annotated PolyA sites) pipeline
 
 #### By Luyang Wang, lwang@wistar.org / wly00001@gmail.com, Bin Tian Lab @ The Wistar Institute
 
