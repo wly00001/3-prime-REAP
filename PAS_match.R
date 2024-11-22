@@ -1,10 +1,10 @@
 
-library(tidyverse)
-library(GenomicFeatures)
-library(GenomicRanges)
-library(GenomicAlignments)
-library(plyr)
-library(ComplexHeatmap)
+if (!require('tidyverse')) install.packages('tidyverse'); library('tidyverse')
+if (!require('GenomicFeatures')) install.packages('GenomicFeatures'); library('GenomicFeatures')
+if (!require('GenomicRanges')) install.packages('GenomicRanges'); library('GenomicRanges')
+if (!require('GenomicAlignments')) install.packages('GenomicAlignments'); library('GenomicAlignments')
+if (!require('plyr')) install.packages('plyr'); library('plyr')
+
 
 
 args<- commandArgs(TRUE)
