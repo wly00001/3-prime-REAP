@@ -143,6 +143,16 @@ def fastq_trim_Ts(infile, outfile, random_NT_len=6):
             qual = qual[match1.end():]
             T_length1 = len(match1.groups()[1])
             read_name = fq.get_name()
+
+            # The second step deal with reads like TTTTTGTTTTTTTCCAGTTGTCAAATGATCCTTTAT
+            match2 = re.match('[ACGN](T+)',seq)
+            if match2:
+                T_length2 = len(match2.groups()[0])
+                if T_length2 > 2 and (T_length1 + T_length2) > 5:
+                    seq = seq[match2.end():]
+                    qual = qual[match2.end():]
+                    T_length1 = T_length1 + 1 + T_length2
+            
             if len(seq) >= 18:
                 c+=1 # counting
                 outhandle.write('\n'.join([read_name, seq, '+', qual]) + '\n')
