@@ -93,7 +93,41 @@ class Fastq(object):
         self.seq = self.seq[:i+1]
         self.qual = self.qual[:i+1]
 
+
 ################################################################################
+    
+def reader_fastq(infile):
+    """Generator of Fastq object from given file"""
+    i = 0
+    name = None
+    seq = None
+    qual = None
+    if infile.endswith('.gz'):
+        import gzip
+        for line in gzip.open(infile, 'rb'):
+            i += 1
+            curr_line = line.strip()
+            if i % 4 == 1:
+                name = curr_line[1:]
+            elif i % 4 == 2:
+                seq = curr_line
+            elif i % 4 == 0:
+                qual = curr_line
+                yield Fastq(name, seq, qual)
+    else:
+        for line in open(infile):
+            i += 1
+            curr_line = line.strip()
+            if i % 4 == 1:
+                name = curr_line
+            elif i % 4 == 2:
+                seq = curr_line
+            elif i % 4 == 0:
+                qual = curr_line
+                yield Fastq(name, seq, qual)
+
+################################################################################
+
 def fastq_trim_Ts(infile, outfile, random_NT_len=6):
 
     import re
